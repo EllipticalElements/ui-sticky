@@ -1,0 +1,11 @@
+{
+  "name": "ui-sticky",
+  "description": "Sticky elements for desktop devices",
+  "version": "1.0.0",
+  "author": "S. Francis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EllipticalElements/ui-sticky.git"
+  }
+}

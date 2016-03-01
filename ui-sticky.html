@@ -1,0 +1,72 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../../components/elliptical-polymer-behaviors/component-behavior.html">
+<script src="jquery.sticky.js"></script>
+<style>
+    ui-sticky{
+        display:none;
+    }
+</style>    
+<script>
+    Polymer({
+        is:'ui-sticky',
+        behaviors:[Elliptical.ComponentBehavior],
+        properties:{
+            selector:{
+                type:String,
+                value:'[sticky]'
+            },
+            topSpacing:{
+                type:String,
+                value:null
+            },
+            bottomSpacing:{
+                type:String,
+                value:null
+            },
+            cssClass:{
+                type:String,
+                value:null
+            },
+            wrapperCssClass:{
+                type:String,
+                value:null
+            },
+            widthFromWrapper:{
+                type:Boolean,
+                value:false
+            },
+            _elements:{
+                type:Array,
+                value:null
+            }
+        },
+        ready:function(){
+            if(!this._mq.touch) this._sticky();
+        },
+        
+        _sticky:function(){
+            var selector=this.selector;
+            var element=$(selector);
+            if(element[0]){
+                this._element=element;
+                var opts=this._getOptions();
+                element.sticky(opts);
+            }
+        },
+        
+        _getOptions:function(){
+            var opts={};
+            if(this.topSpacing) opts.topSpacing=this.topSpacing;
+            if(this.topSpacing) opts.bottomSpacing=this.bottomSpacing;
+            if(this.cssClass) opts.className=this.cssClass;
+            if(this.wrapperCssClass) opts.wrapperClassName=this.wrapperCssClass;
+            if(this.widthFromWrapper) opts.widthFromWrapper=true;
+            return opts;
+        },
+        
+        update:function(){
+            var element=this._element;
+            if(element) element.sticky('update');
+        }
+    });
+</script>
