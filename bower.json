@@ -1,6 +1,6 @@
 {
   "name": "ui-sticky",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "authors": [
     "S. Francis"
   ],
@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "elliptical-polymer-behaviors": "~1.1.0",
+    "elliptical-polymer-behaviors": "~1.2.0",
     "jquery-extensions": "~1.0.7"
   },
   "devDependencies": {
